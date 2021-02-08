@@ -614,8 +614,33 @@ header::after {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.examples > .items:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .examples > .items:nth-child(3n) {
   margin-right: 0px;
+}
+
+.examples .wrapper {
+  position: relative;
+}
+
+.examples .wrapper .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.556;
+  color: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .card-content {
