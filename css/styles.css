@@ -665,15 +665,18 @@ header::after {
   background-color: var(--white);
 }
 
-.examples > .items:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.examples .link {
+  display: block;
+  color: var(--main-text-color);
+  font-size: 16px;
+  line-height: 1.875;
+  box-shadow: none;
+  transition: box-shadow 250ms var(--time-function);
 }
 
-.examples > .items:hover .overlay {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.examples .link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples > .items:nth-child(3n) {
@@ -682,21 +685,26 @@ header::after {
 
 .examples .wrapper {
   position: relative;
+  overflow: hidden;
 }
 
-.examples .wrapper .overlay {
+.examples .overlay {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 64px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   font-size: 18px;
   line-height: 1.556;
   color: var(--white);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  transform: translateY(100%);
+  transition: transform 250ms var(--time-function);
+}
+
+.examples .link:hover .overlay {
+  transform: translateY(0);
 }
 
 .card-content {
@@ -712,11 +720,6 @@ header::after {
   letter-spacing: 0.06em;
   text-align: unset;
   margin-bottom: 4px;
-}
-
-.card-content > p {
-  font-size: 16px;
-  line-height: 1.875;
 }
 
 /* ======= END OUR PROJECTS ======= */
