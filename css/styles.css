@@ -10,6 +10,7 @@
     text on dark background (white):        #ffffff; */
 /* secondary background color &
     background color for modal-button:      #f5f4fa; */
+/* icons-logo-primary-color:                #afb1b8; */
 /* contacts color:                          rgba(255, 255, 255, 0.6); */
 
 :root {
@@ -19,6 +20,7 @@
   --black: #000000;
   --white: #ffffff;
   --secondary-background-color: #f5f4fa;
+  --icons-logo-primary-color: #afb1b8;
   --contacts-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -160,6 +162,7 @@ header::after {
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link {
@@ -170,6 +173,9 @@ header::after {
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
+  fill: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-navigation .link:hover,
@@ -178,7 +184,7 @@ header::after {
 .contacts .link:focus,
 .site-navigation .link:active {
   color: var(--accent-color);
-  --color2: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .site-navigation .link.active {
@@ -416,13 +422,16 @@ header::after {
   width: 44px;
   height: 44px;
   background-color: var(--white);
+  fill: var(--icons-logo-primary-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-nets .link:hover,
 .social-nets .link:focus {
   background-color: var(--accent-color);
-  --color1: var(--white);
+  fill: var(--white);
 }
 
 /* ======= PERMANENT CLIENTS =======*/
@@ -448,7 +457,10 @@ header::after {
   width: 170px;
   height: 90px;
   border: 1px solid #afb1b8;
+  fill: var(--icons-logo-primary-color);
   border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients .icons {
@@ -459,7 +471,7 @@ header::after {
 .clients .link:hover,
 .clients .link:focus {
   border-color: var(--accent-color);
-  --color1: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 /* ======= END MAIN ======= */
@@ -542,7 +554,7 @@ header::after {
 
 .social-container .link {
   background-color: #ffffff1a;
-  --color1: var(--white);
+  fill: var(--white);
 }
 
 .social-container .link:hover,
